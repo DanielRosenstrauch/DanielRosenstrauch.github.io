@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>H.E.A.T. case study, Daniel Rosenstrauch</title>
+<meta name="description" content="How a team of five turned a 3D printer into a localized textile bonding tool for the Preston Innovation Lab.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+body{margin:0;background:#F3F4F1}
+a{color:#15191E}a:hover{color:#1D4ED8}
+</style>
+<style>html{scroll-behavior:smooth}img{max-width:100%}a:focus-visible{outline:2px solid #1D4ED8;outline-offset:3px}</style>
+</head>
+<body>
+<div style="font-family: 'IBM Plex Sans', system-ui, sans-serif; color: #15191E; background: #F3F4F1; line-height: 1.55; font-size: 17px">
+
+<header style="border-bottom: 1px solid #D5D8D3; background: #F3F4F1">
+<div style="max-width: 1120px; margin: 0 auto; padding: 20px 24px; display: flex; flex-wrap: wrap; gap: 16px 32px; align-items: center; justify-content: space-between">
+<a href="index.html" style="font-weight: 600; font-size: 18px; text-decoration: none; letter-spacing: -0.01em">Daniel Rosenstrauch</a>
+<a href="index.html" style="text-decoration: none; font-size: 15px; padding: 10px 0">← All work</a>
+</div>
+</header>
+
+<section style="max-width: 1120px; margin: 0 auto; padding: 72px 24px 48px; display: flex; flex-direction: column; gap: 24px">
+<div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #565D66">Case study · Highly Efficient Applied Thermalization</div>
+<h1 style="margin: 0; font-size: clamp(34px, 4.6vw, 52px); line-height: 1.1; font-weight: 600; letter-spacing: -0.025em; max-width: 18em; text-wrap: balance">A 3D printer that bonds textiles along a toolpath</h1>
+<p style="margin: 0; font-size: 20px; line-height: 1.5; color: #3A4048; max-width: 36em">The Preston Innovation Lab needed to apply heat and pressure to fabric only where a bond belongs. We adapted a Prusa MINI to do it and verified the bonds against the lab’s targets.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 20px 48px; padding: 24px 0; border-top: 1px solid #15191E; border-bottom: 1px solid #D5D8D3; margin-top: 16px">
+<div style="display: flex; flex-direction: column; gap: 4px"><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #565D66">Client</div><div style="font-weight: 500">Preston Innovation Lab</div></div>
+<div style="display: flex; flex-direction: column; gap: 4px"><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #565D66">Timeline</div><div style="font-weight: 500">Jan to May 2025</div></div>
+<div style="display: flex; flex-direction: column; gap: 4px"><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #565D66">Team</div><div style="font-weight: 500">Five engineers</div></div>
+<div style="display: flex; flex-direction: column; gap: 4px"><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #565D66">My role</div><div style="font-weight: 500">Design, build, G-code, and testing against the design criteria</div></div>
+<div style="display: flex; flex-direction: column; gap: 4px"><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #565D66">Budget</div><div style="font-weight: 500">$250</div></div>
+</div>
+</section>
+
+<section style="max-width: 1120px; margin: 0 auto; padding: 0 24px 56px">
+<img loading="lazy" src="images/heat-magnets.jpg" alt="Top view of the Prusa MINI bonding navy textile held down by bar magnets" style="width: 100%; aspect-ratio: 16 / 7; min-height: 240px; object-fit: cover; object-position: center 40%; border-radius: 6px; display: block">
+</section>
+
+<section style="max-width: 1120px; margin: 0 auto; padding: 24px 24px 56px; display: flex; flex-wrap: wrap; gap: 16px 40px">
+<h2 style="flex: 0 0 240px; margin: 0; font-size: 26px; font-weight: 600; letter-spacing: -0.015em">Problem</h2>
+<div style="flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 16px; max-width: 40em">
+<p style="margin: 0; color: #3A4048">The lab builds soft, inflatable wearables by fusing layers of textile with heat and pressure. Its only tool was a large heat press that treats the whole surface at once, so every design needed pre-cut adhesive layers to shield the areas that should stay open.</p>
+<p style="margin: 0; color: #3A4048">That process was slow, wasted material, let layers shift, and sometimes left adhesive blocking the airways a design depends on. An earlier retrofitted 3D printer was too hard to use.</p>
+<img loading="lazy" src="images/heat-existing.jpg" alt="The lab's existing five-step process: layer on vinyl transfer paper, cut out the design, peel off bonding layers, pin together, bond with a heat press" style="width: 100%; border: 1px solid #D5D8D3; border-radius: 6px; display: block">
+<p style="margin: 0; font-weight: 500">Brief: a localized heating tool that bonds textiles precisely, with adjustable temperature, pressure, and speed.</p>
+</div>
+</section>
+
+<section style="max-width: 1120px; margin: 0 auto; padding: 24px 24px 56px; display: flex; flex-wrap: wrap; gap: 16px 40px; border-top: 1px solid #D5D8D3">
+<h2 style="flex: 0 0 240px; margin: 0; padding-top: 24px; font-size: 26px; font-weight: 600; letter-spacing: -0.015em">Choosing a concept</h2>
+<div style="flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 24px; padding-top: 24px">
+<div style="display: flex; flex-wrap: wrap; gap: 16px">
+<div style="flex: 1 1 150px; background: #FFFFFF; border: 1px solid #D5D8D3; border-radius: 6px; padding: 20px; display: flex; flex-direction: column; gap: 4px"><div style="font-size: 30px; font-weight: 600; font-variant-numeric: tabular-nums">51</div><div style="font-size: 14px; color: #565D66">ideas from two brainstorming rounds</div></div>
+<div style="flex: 1 1 150px; background: #FFFFFF; border: 1px solid #D5D8D3; border-radius: 6px; padding: 20px; display: flex; flex-direction: column; gap: 4px"><div style="font-size: 30px; font-weight: 600; font-variant-numeric: tabular-nums">8</div><div style="font-size: 14px; color: #565D66">finalists after Pugh screening against the heat press</div></div>
+<div style="flex: 1 1 150px; background: #FFFFFF; border: 1px solid #D5D8D3; border-radius: 6px; padding: 20px; display: flex; flex-direction: column; gap: 4px"><div style="font-size: 30px; font-weight: 600; font-variant-numeric: tabular-nums">2</div><div style="font-size: 14px; color: #565D66">concepts left after weighted scoring</div></div>
+<div style="flex: 1 1 150px; background: #FFFFFF; border: 1px solid #D5D8D3; border-radius: 6px; padding: 20px; display: flex; flex-direction: column; gap: 4px"><div style="font-size: 30px; font-weight: 600; font-variant-numeric: tabular-nums">4.9</div><div style="font-size: 14px; color: #565D66">score of the winning concept</div></div>
+</div>
+<p style="margin: 0; color: #3A4048; max-width: 40em">We broke the problem into four blocks (heating, pressure, fixation, motion) and recombined partial ideas into complete ones. Scoring weighted intricacy at 30%, with fixation and pressure at 20% each. Fixation was not on our original criteria list; screening showed that perfect heat and pressure mean nothing if the fabric moves, so we added it.</p>
+<p style="margin: 0; color: #3A4048; max-width: 40em">A heated metal point on a 3D-printer gantry with magnetic fixation won. It beat the runner-up, a heated stamp on a hinge, because it can change temperature and pressure partway through a design.</p>
+</div>
+</section>
+
+<section style="max-width: 1120px; margin: 0 auto; padding: 24px 24px 56px; display: flex; flex-wrap: wrap; gap: 16px 40px; border-top: 1px solid #D5D8D3">
+<h2 style="flex: 0 0 240px; margin: 0; padding-top: 24px; font-size: 26px; font-weight: 600; letter-spacing: -0.015em">What we built</h2>
+<div style="flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 24px; padding-top: 24px">
+<p style="margin: 0; color: #3A4048; max-width: 40em">The prototype is a Prusa MINI whose hot nozzle is the bonding tool. The nozzle supplies the heat, the z-axis sets the pressure, and bar magnets on the steel bed hold the textile. We converted the lab’s design images to toolpaths with Inkscape, and I wrote and edited the G-code that controls each move. Heat and pressure land within 0.4 mm.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 0 40px; border-top: 1px solid #D5D8D3">
+<div style="flex: 1 1 240px; display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid #D5D8D3"><span style="color: #565D66">Heated point</span><span style="font-weight: 500; font-variant-numeric: tabular-nums">0.4 mm nozzle</span></div>
+<div style="flex: 1 1 240px; display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid #D5D8D3"><span style="color: #565D66">Temperature range</span><span style="font-weight: 500; font-variant-numeric: tabular-nums">0 to 280 °C</span></div>
+<div style="flex: 1 1 240px; display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid #D5D8D3"><span style="color: #565D66">XYZ accuracy</span><span style="font-weight: 500; font-variant-numeric: tabular-nums">0.1 mm</span></div>
+<div style="flex: 1 1 240px; display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid #D5D8D3"><span style="color: #565D66">Fixation</span><span style="font-weight: 500">Bar magnets</span></div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 16px">
+<img loading="lazy" src="images/heat-tip.jpg" alt="Close-up of the heated nozzle pressing into the textile" style="flex: 1 1 260px; min-width: 0; height: 260px; object-fit: cover; border-radius: 6px; display: block">
+<img loading="lazy" src="images/heat-squeeze.jpg" alt="A bonded squeeze band lying flat, then curled when inflated" style="flex: 1 1 260px; min-width: 0; height: 260px; object-fit: cover; border-radius: 6px; display: block">
+</div>
+</div>
+</section>
+
+<section style="max-width: 1120px; margin: 0 auto; padding: 24px 24px 56px; display: flex; flex-wrap: wrap; gap: 16px 40px; border-top: 1px solid #D5D8D3">
+<h2 style="flex: 0 0 240px; margin: 0; padding-top: 24px; font-size: 26px; font-weight: 600; letter-spacing: -0.015em">Test results</h2>
+<div style="flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 24px; padding-top: 24px">
+<div style="overflow-x: auto; background: #FFFFFF; border: 1px solid #D5D8D3; border-radius: 6px">
+<table style="width: 100%; min-width: 560px; border-collapse: collapse; font-size: 16px; font-variant-numeric: tabular-nums">
+<thead>
+<tr>
+<th style="text-align: left; padding: 14px 20px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #565D66; border-bottom: 1px solid #15191E">Criterion</th>
+<th style="text-align: left; padding: 14px 20px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #565D66; border-bottom: 1px solid #15191E">Target</th>
+<th style="text-align: left; padding: 14px 20px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #565D66; border-bottom: 1px solid #15191E">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr><td style="padding: 14px 20px; border-bottom: 1px solid #D5D8D3; font-weight: 500">Bond strength, tensile pull</td><td style="padding: 14px 20px; border-bottom: 1px solid #D5D8D3">About 5 N/mm</td><td style="padding: 14px 20px; border-bottom: 1px solid #D5D8D3">5.016 N/mm average</td></tr>
+<tr><td style="padding: 14px 20px; border-bottom: 1px solid #D5D8D3; font-weight: 500">Fixation, textile shift</td><td style="padding: 14px 20px; border-bottom: 1px solid #D5D8D3">Under 0.1 cm</td><td style="padding: 14px 20px; border-bottom: 1px solid #D5D8D3">Under 0.1 cm average, nine trials</td></tr>
+<tr><td style="padding: 14px 20px; border-bottom: 1px solid #D5D8D3; font-weight: 500">Intricacy, path deviation</td><td style="padding: 14px 20px; border-bottom: 1px solid #D5D8D3">Under 1 cm</td><td style="padding: 14px 20px; border-bottom: 1px solid #D5D8D3">Within 1 cm of the drawn design</td></tr>
+<tr><td style="padding: 14px 20px; font-weight: 500">Durability, cyclic inflation</td><td style="padding: 14px 20px">No leaks or separation</td><td style="padding: 14px 20px">None after 12 h at 22 psi</td></tr>
+</tbody>
+</table>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 16px">
+<img loading="lazy" src="images/heat-tensile.jpg" alt="Bonded textile sample gripped in a tensile testing machine" style="flex: 1 1 260px; min-width: 0; max-width: 420px; height: 320px; object-fit: cover; border-radius: 6px; display: block">
+
+</div>
+</div>
+</section>
+
+<section style="max-width: 1120px; margin: 0 auto; padding: 24px 24px 72px; display: flex; flex-wrap: wrap; gap: 16px 40px; border-top: 1px solid #D5D8D3">
+<h2 style="flex: 0 0 240px; margin: 0; padding-top: 24px; font-size: 26px; font-weight: 600; letter-spacing: -0.015em">How we tested</h2>
+<div style="flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; padding-top: 4px; max-width: 40em">
+<div style="display: flex; flex-direction: column; gap: 6px; padding: 20px 0; border-bottom: 1px solid #D5D8D3"><div style="font-weight: 600; font-size: 18px">Pull test</div><p style="margin: 0; color: #3A4048">We gripped bonded samples of several sizes in a tensile testing machine and raised the force until the layers separated. The lab’s target was about 5 N/mm; our samples averaged 5.016 N/mm.</p></div>
+<div style="display: flex; flex-direction: column; gap: 6px; padding: 20px 0; border-bottom: 1px solid #D5D8D3"><div style="font-weight: 600; font-size: 18px">Fixation test</div><p style="margin: 0; color: #3A4048">Before each bond we marked the magnet positions on the print bed and taped a reference along the textile’s edge. Afterward we measured how far the fabric had moved. Across nine trials in three bonding configurations, the average shift was under 0.1 cm.</p></div>
+<div style="display: flex; flex-direction: column; gap: 6px; padding: 20px 0; border-bottom: 1px solid #D5D8D3"><div style="font-weight: 600; font-size: 18px">Intricacy test</div><p style="margin: 0; color: #3A4048">We measured distances between set points on the bonded fabric and compared them with the dimensions of the design drawn in Inkscape. The bonds stayed within 1 cm of the drawing.</p></div>
+<div style="display: flex; flex-direction: column; gap: 6px; padding: 20px 0; border-bottom: 1px solid #D5D8D3"><div style="font-weight: 600; font-size: 18px">Overnight inflation test</div><p style="margin: 0; color: #3A4048">We inflated bonded samples to 22 psi with an air pump and cycled them through inflation and deflation for 12 hours. No sample leaked or separated.</p></div>
+<div style="display: flex; flex-direction: column; gap: 6px; padding: 20px 0; border-bottom: 1px solid #D5D8D3"><div style="font-weight: 600; font-size: 18px">Temperature check</div><p style="margin: 0; color: #3A4048">A thermocouple wired to an Arduino measured the nozzle tip while it bonded. It read about 15 °C off the printer’s display on average. Precise heat control was not a design criterion, so this informed our settings but did not change the design.</p></div>
+<p style="margin: 20px 0 0; color: #3A4048">Once the concept could deliver enough heat and pressure, we replaced those two criteria with bond strength, because that is what the lab needs from a finished part.</p>
+<p style="margin: 16px 0 0; color: #565D66; font-size: 15px">Team: Daniel Rosenstrauch, Didi Jack, Van Do, David Fankhauser, Sam Kwan.</p>
+</div>
+</section>
+
+<section style="background: #15191E; color: #F3F4F1">
+<div style="max-width: 1120px; margin: 0 auto; padding: 48px 24px; display: flex; flex-wrap: wrap; gap: 20px 40px; align-items: center; justify-content: space-between">
+<div style="font-size: 22px; font-weight: 600; letter-spacing: -0.01em">Want the full report or the G-code workflow?</div>
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<a href="mailto:dr83@rice.edu" style="text-decoration: none; padding: 13px 22px; border-radius: 4px; font-weight: 500; color: #FFFFFF; background: #1D4ED8">dr83@rice.edu</a>
+<a href="index.html" style="text-decoration: none; padding: 12px 22px; border-radius: 4px; font-weight: 500; color: #FFFFFF; border: 1px solid #F3F4F1">Back to all work</a>
+</div>
+</div>
+</section>
+
+</div>
+</body>
+</html>
